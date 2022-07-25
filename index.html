@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cybot</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
         body{
@@ -13,26 +13,24 @@
         }
         canvas {
             display: block;
-            width: 50%;
+            overflow: hidden;
         }
         .info {
             position: absolute;
-            top: 10px;
+            top: 50px;
             width: 100%;
             text-align: center;
             z-index: 100;
             display:block;
             color: white;
         }
-        /* Add a black background color to the top navigation */
-        .topnav {
-        background-color: black;
-        overflow: hidden;
-        width: 100%;
+        .nav_bar {
+            position: relative;
+            background-color: black;
+            overflow: hidden;
         }
 
-        /* Style the links inside the navigation bar */
-        .topnav a {
+        .nav_bar a {
         float: left;
         color: #f2f2f2;
         text-align: center;
@@ -41,14 +39,11 @@
         font-size: 17px;
         }
 
-        /* Change the color of links on hover */
-        .topnav a:hover {
-        /* background-color: #ddd; */
+        .nav_bar a:hover {
         color: rgb(209, 255, 25);
         }
 
-        /* Add a color to the active/current link */
-        .topnav a.active {
+        .nav_bar a.active {
         background-color: #04AA6D;
         color: white;
         }
@@ -79,7 +74,7 @@
         // scene.background = new THREE.Color(0xffffff)
         var light = new THREE.HemisphereLight(0xffffff, 0x000000, 1);
         scene.add(light);
-        camera.position.set(100, 200, 1000);
+        camera.position.set(100, 200, 1050);
         function animate(){
             requestAnimationFrame(animate);
             obj.rotation.y += 0.005;
@@ -89,11 +84,10 @@
 </script>
 </head>
 <body> 
-    <div class="topnav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#">Video</a>
-        <a href="#">Posters</a>
+    <div class="nav_bar">
+        <a href="index.html">home</a>
+        <a href="about.html">about the product</a>
     </div>
+    <p class="info" style="font-size: 50px;">CyBot</p>
 </body>
 </html>
