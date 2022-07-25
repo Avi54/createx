@@ -47,6 +47,18 @@
         background-color: #04AA6D;
         color: white;
         }
+        /* audio {
+            visibility: hidden;
+        } */
+        .logo {
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 1;
+            /* width: ; */
+        }
     </style>
     <script src="three.js"></script>
     <script type="module" src="GLTFLoader.js"></script>
@@ -71,10 +83,11 @@
             obj = gltf.scene;
             scene.add(gltf.scene);
         });
+
         // scene.background = new THREE.Color(0xffffff)
         var light = new THREE.HemisphereLight(0xffffff, 0x000000, 1);
         scene.add(light);
-        camera.position.set(100, 200, 1050);
+        camera.position.set(100, 250, 1050);
         function animate(){
             requestAnimationFrame(animate);
             obj.rotation.y += 0.005;
@@ -85,9 +98,17 @@
 </head>
 <body> 
     <div class="nav_bar">
-        <a href="index.html">home</a>
-        <a href="about.html">about the product</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About the product</a>
     </div>
-    <p class="info" style="font-size: 50px;">CyBot</p>
+    <div class="logo"> 
+        <img src="logo.png" alt="" srcset="" >
+    </div>
+    <audio id="audio_clip" src="music.mp3" loop="loop"></audio>
+    <script>
+        window.ready = function() {
+            document.getElementById("audio_clip").play()
+        }
+    </script>
 </body>
 </html>
